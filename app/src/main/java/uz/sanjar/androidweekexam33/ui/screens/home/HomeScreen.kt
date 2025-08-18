@@ -2,7 +2,6 @@ package uz.sanjar.androidweekexam33.ui.screens.home
 
 import android.Manifest
 import android.os.Build
-import android.util.Log
 import android.widget.Toast
 import androidx.activity.compose.rememberLauncherForActivityResult
 import androidx.activity.result.contract.ActivityResultContracts
@@ -69,6 +68,9 @@ import uz.sanjar.androidweekexam33.ui.screens.home.components.CategoryItem
 import uz.sanjar.androidweekexam33.ui.screens.home.components.ItemCategory
 import uz.sanjar.androidweekexam33.ui.screens.home.components.ItemTask
 import uz.sanjar.androidweekexam33.utils.task_type.TaskType
+import java.time.LocalDate
+import java.time.format.DateTimeFormatter
+import java.util.Locale
 
 /**   Created by Sanjar Karimov 12:42 PM 1/19/2025   */
 
@@ -110,7 +112,10 @@ fun HomeScreenContent(
     eventDispatcher: (HomeContract.Intent) -> Unit = {},
     uiState: State<HomeContract.UIState> = remember { mutableStateOf(HomeContract.UIState()) },
 ) {
-
+    val today = LocalDate.now()
+    val formattedDate = today.format(
+        DateTimeFormatter.ofPattern("dd MMM", Locale.getDefault())
+    )
     val categoryList = listOf(
         CategoryItem(
             categoryName = "Health",
@@ -134,7 +139,6 @@ fun HomeScreenContent(
         ),
     )
 
-    Log.d("LALALALA", "HomeScreenContent: recomposed")
 
     Scaffold(
         containerColor = Color.White,
@@ -145,7 +149,7 @@ fun HomeScreenContent(
                     containerColor = Color.White
                 ),
                 title = {
-                    TopBarText("Today", "21 Jan")
+                    TopBarText("Today", formattedDate)
                 },
                 navigationIcon = {},
                 modifier = Modifier.clickable { eventDispatcher(HomeContract.Intent.OnCalendarClick) }
