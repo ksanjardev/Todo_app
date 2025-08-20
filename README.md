@@ -65,5 +65,4 @@ Users also receive **notifications at the exact time they scheduled tasks**, pow
 
 1. **Clone the repo**  
    ```bash
-   git clone https://github.com/ksanjardev/TodoApp.git
-   cd TodoApp
+   git clone https://github.com/ksanjardev/Todo_app.git
