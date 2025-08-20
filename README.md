@@ -34,7 +34,7 @@ Users also receive **notifications at the exact time they scheduled tasks**, pow
 
 ## 📲 Download
 
-👉 [Download Latest APK](https://github.com/ksanjardev/Todo-app/raw/master/app-debug.apk)
+👉 [Download Latest APK](https://github.com/ksanjardev/Todo_app/raw/master/app-debug.apk)
 
 ---
 
